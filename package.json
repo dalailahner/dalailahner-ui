@@ -1,0 +1,19 @@
+{
+  "name": "dalailahner-ui",
+  "theme": "ui",
+  "version": "0.0.0",
+  "description": "Dark UI theme with a sultry red as main accent color.",
+  "keywords": [
+    "ui",
+    "theme",
+    "dalailahner",
+    "gruvbox",
+    "dark",
+    "modern"
+  ],
+  "repository": "https://github.com/dalailahner/dalailahner-ui",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}

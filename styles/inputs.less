@@ -1,0 +1,31 @@
+
+// Inputs
+// -------------------
+
+input {
+  accent-color: @accent-color;
+}
+
+.input-checkbox, .input-radio, .input-toggle {
+  cursor: pointer;
+  &:checked, &:focus, &:active {
+    background-color: @accent-color;
+  }
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  background-color: @base-border-color;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: @accent-color;
+  }
+}
+
+.input-select {
+  background-color: @input-background-color;
+  border: 1px solid @base-border-color;
+  border-radius: @component-border-radius;
+}

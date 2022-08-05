@@ -1,0 +1,87 @@
+
+// Progress
+// -------------------
+
+// The `progress` element is unstyled and defined by the OS.
+// See https://css-tricks.com/html5-progress-element/ in case you want to customize it.
+
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-webkit-progress-bar {
+    height: @input-font-size;
+    padding: 0;
+    background: @base-background-color;
+    border: 1px solid @base-border-color;
+    border-radius: @component-border-radius;
+  }
+
+  &::-webkit-progress-value {
+    border-radius: @component-border-radius;
+    background-color: @accent-color;
+    transition: width 60ms ease;
+  }
+}
+
+progress:not([value]) {
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-webkit-progress-bar {
+    height: @input-font-size;
+    background: @base-background-color;
+    border: 1px solid @base-border-color;
+    border-radius: @component-border-radius;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: calc(100% - 1px);
+    height: calc(@input-font-size - 1px);
+    position: relative;
+    top: -100%;
+    left: 0.5px;
+    background: linear-gradient(-60deg, @accent-color 0%, @accent-color 29%, transparent 31%, transparent 69%, @accent-color 71%, @accent-color 100%);
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+    background-size: @input-font-size*2 @input-font-size;
+    border: 1px solid transparent;
+    border-radius: @component-border-radius;
+    animation: progressboi 1s linear 0s infinite;
+  }
+}
+
+@keyframes progressboi {
+  from { background-position: 0px 0px; }
+  to { background-position: @input-font-size*2 0px; }
+}
+
+
+// Spinner -------------------
+
+.loading-spinner-large  { .loading-spinner(64px); }
+.loading-spinner-medium { .loading-spinner(48px); }
+.loading-spinner-small  { .loading-spinner(32px); }
+.loading-spinner-tiny   { .loading-spinner(16px); }
+
+.loading-spinner(@size) {
+  display: block;
+  width: @size;
+  height: @size;
+  background-image: url(images/octocat-spinner-128.gif);
+  background-image: conic-gradient(transparent 0deg, @accent-color 360deg);
+  background-repeat: no-repeat;
+  background-size: @size @size;
+  clip-path: circle(49%);
+  animation: spinnyboi 1.5s linear 0s infinite;
+  &.inline-block {
+    display: inline-block;
+  }
+}
+
+@keyframes spinnyboi {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

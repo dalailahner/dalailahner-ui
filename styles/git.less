@@ -1,0 +1,24 @@
+
+// Git
+// -------------------
+
+// Used to color git status
+
+.status          { color: @text-color; }
+.status-added    { color: @text-color-success; } // green
+.status-ignored  { color: @text-color-subtle; }  // faded
+.status-modified { color: @text-color-warning; } // orange
+.status-removed  { color: @text-color-error; }   // red
+.status-renamed  { color: @text-color-info; }    // blue
+
+.github-Project-avatar, .github-RecentCommit-avatar {
+  border-radius: 100%;
+}
+
+.github-CommitView-editor, .github-CommitView-editor .github-AtomTextEditor-container atom-text-editor {
+  background-color: @input-background-color;
+}
+
+.github-RecentCommit, .github-FilePatchListView-item {
+  border-radius: @component-border-radius;
+}

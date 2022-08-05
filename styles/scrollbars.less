@@ -1,0 +1,34 @@
+
+// Srollbars
+// -------------------
+
+
+.vertical-scrollbar, .horizontal-scrollbar, .scrollbars-visible-always {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: transparent;
+
+    &-track {
+      background: transparent;
+    }
+
+    &-thumb {
+      background: @background-color-selected;
+      border: none;
+      border-radius: 8px;
+
+      &:hover {
+        background: lighten(@background-color-selected, 10%);
+      }
+
+      &:window-inactive {
+        background: @background-color-selected;
+      }
+    }
+
+    &-corner {
+      background: transparent;
+    }
+  }
+}
